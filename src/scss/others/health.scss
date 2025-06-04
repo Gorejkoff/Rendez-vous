@@ -1,0 +1,284 @@
+@use '../assets/variablesSCSS.scss' as *;
+@use '../assets/mixin.scss' as *;
+
+.health {
+   position: relative;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   display: flex;
+   align-items: stretch;
+   min-height: 151vw;
+   overflow: hidden;
+
+   @media (min-width:1024px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      min-height: 43vw;
+   }
+
+
+   &__container {}
+
+   &__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   &__body {
+      height: 100%;
+
+      @media (min-width:1024px) {
+         display: flex;
+      }
+   }
+
+   &__markers {
+      position: relative;
+      display: none;
+
+      @media (min-width:1024px) {
+         display: block;
+         flex: 1 1 auto;
+      }
+   }
+
+   &__marker {
+      &.marker-1 {
+         position: absolute;
+         --size: 85px;
+
+         @media (min-width:1024px) {
+            top: 3%;
+            left: calc(var(--left) * 1%);
+         }
+
+         @include number_adaptive (--left, 57, 80, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --left: 80;
+         }
+
+         @include number_adaptive (--left, 80, 60, 2080, 3000);
+
+         @media (min-width:3000px) {
+            --left: 60;
+         }
+      }
+
+      &.marker-2 {
+         position: absolute;
+         --size: 120px;
+
+         @media (min-width:1024px) {
+            top: 48%;
+            left: calc(var(--left) * 1%);
+         }
+
+         @include number_adaptive (--left, 48, 65, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --left: 65;
+         }
+
+         @include number_adaptive (--left, 65, 40, 2080, 3000);
+
+         @media (min-width:3000px) {
+            --left: 40;
+         }
+      }
+
+      &.marker-3 {
+         position: absolute;
+         --size: 100px;
+
+         @media (min-width:1024px) {
+            top: 80%;
+            left: calc(var(--left) * 1%);
+         }
+
+         @include number_adaptive (--left, 35, 50, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --left: 50;
+         }
+
+         @include number_adaptive (--left, 50, 20, 2080, 3000);
+
+         @media (min-width:3000px) {
+            --left: 20;
+         }
+      }
+
+      &::after {
+         content: '';
+         pointer-events: none;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         z-index: -1;
+         transform: translate(-50%, -50%);
+         border: 1px solid var(--color-white);
+         border-radius: 50%;
+
+      }
+
+      &:hover::after {
+         animation: big-circle 1s;
+      }
+   }
+
+   &__marker-text {
+      position: absolute;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 129%;
+      color: var(--color-olive-brown);
+
+      .marker-1 & {
+         bottom: 0%;
+         left: 200%;
+      }
+
+      .marker-2 & {
+         bottom: 150%;
+         left: 150%;
+      }
+
+      .marker-3 & {
+         bottom: 200%;
+         right: 200%;
+      }
+
+   }
+
+   &__content {
+      @include size_adaptive_flex (0, 0, 488, 791, 1024, $max-width-container);
+
+      @media (min-width:$max-width-container) {
+         flex: 0 0 791px;
+      }
+   }
+
+   &__header {
+      margin-top: 74px;
+
+      @media (min-width:1024px) {
+         margin-top: 0;
+         margin-bottom: 34px;
+      }
+
+      @include size_adaptive (padding-top, 0, 110, 1024, $max-width-container);
+
+      @media (min-width:$max-width-container) {
+         margin-bottom: 80px;
+         padding-top: 110px;
+
+         br {
+            display: none;
+         }
+      }
+   }
+
+   &__header-text {
+      font-size: 20px;
+      line-height: 125%;
+      max-width: 240px;
+   }
+
+   &__grid.swiper-wrapper {
+      @media (min-width:1024px) {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         row-gap: 20px;
+         column-gap: 10px;
+      }
+
+      @media (min-width:$max-width-container) {
+         row-gap: 35px;
+         column-gap: 27px;
+      }
+   }
+
+   &__cell {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--color-white-05);
+      border-radius: 12px;
+      backdrop-filter: blur(80px);
+      background: var(--color-forest-wolf-05);
+      min-height: 180px;
+
+      @media (min-width:1024px) {
+         min-height: 242px;
+      }
+
+      @include size_adaptive (padding, 15, 32, 1024, $max-width-container);
+
+      @media (min-width:$max-width-container) {
+         padding: 32px;
+         min-height: 248px;
+      }
+
+
+   }
+
+   &__cell-header {
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+   }
+
+   &__cell-title {
+      max-width: 130px;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 129%;
+      color: var(--color-olive-brown);
+   }
+
+   &__cell-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--color-white);
+   }
+
+   &__cell-text {
+      font-size: 16px;
+      color: var(--color-black-dark);
+
+      @media (min-width:1024px) {
+         line-height: 141%;
+      }
+
+      @media (min-width:$max-width-container) {
+         font-size: 17px;
+         line-height: 129%;
+      }
+   }
+}
+
+@keyframes big-circle {
+
+   0% {
+      width: var(--size, 123px);
+      height: var(--size, 123px);
+   }
+
+   100% {
+      width: 51px;
+      height: 51px;
+   }
+}

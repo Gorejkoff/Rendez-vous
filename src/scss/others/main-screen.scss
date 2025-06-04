@@ -1,0 +1,361 @@
+@use '../assets/variablesSCSS.scss' as *;
+@use '../assets/mixin.scss' as *;
+
+.main-screen {
+   position: relative;
+   padding-bottom: 100px;
+   overflow: hidden;
+   @include size_adaptive (padding-bottom, 290, 320, 1024, $max-width-container);
+
+   @media (min-width:$max-width-container) {
+      padding-bottom: 320px;
+   }
+
+   &__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+
+   .title-section {
+      padding-right: 10px;
+
+      @include size_adaptive_flex (0, 0, 339, 536, 1024, $max-width-container);
+
+      @media (min-width:$max-width-container) {
+         font-size: 49px;
+         flex: 0 0 536px;
+      }
+   }
+
+   &__body {
+      position: relative;
+   }
+
+   &__content {
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      @media (min-width:1024px) {
+         position: absolute;
+      }
+   }
+
+   &__header {
+      position: relative;
+      z-index: 3;
+
+      @media (min-width:1024px) {
+         margin-bottom: 135px;
+         display: flex;
+         justify-content: space-between;
+      }
+
+   }
+
+   &__image {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+   }
+
+   &__image-body {
+      margin-top: -110px;
+      overflow: hidden;
+      pointer-events: none;
+
+      @media (min-width:1024px) {
+         margin-top: 0;
+      }
+   }
+
+   &__image-wrapper {
+      display: flex;
+      transform: translateX(calc(-100% * var(--offset, 0)));
+      transition: transform .7s;
+      width: 120vw;
+
+      @media (min-width:1024px) {
+         width: 100vw;
+      }
+   }
+
+   &__image-shell {
+      flex: 0 0 100vw;
+      display: flex;
+      justify-content: center;
+
+      img {
+         width: 120vw;
+
+         @media (min-width:1024px) {
+            width: 480px;
+         }
+      }
+   }
+
+   &__text {
+      margin-top: 10px;
+      margin-bottom: 48px;
+      font-weight: 500;
+      font-size: 16px;
+
+      @include size_adaptive_flex (0, 0, 304, 394, 1024, $max-width-container);
+
+      @media (min-width:1024px) {
+         margin-top: 0;
+         margin-bottom: 0;
+         line-height: 156%;
+      }
+
+      @media (min-width:$max-width-container) {
+         flex: 0 0 394px;
+         font-size: 20px;
+         line-height: 125%;
+      }
+   }
+
+   &__inscription {
+      position: relative;
+      z-index: 1;
+      display: none;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
+
+      img,
+      svg {
+         width: 100%;
+         height: auto;
+      }
+   }
+
+   &__circle {
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      --diameter: 510px;
+      width: var(--diameter);
+      height: var(--diameter);
+      border-radius: 50%;
+
+      @media (min-width:1024px) {
+         display: block;
+         top: calc(var(--top) * 1%);
+      }
+
+      @include number_adaptive(--top, 70, 50, 1024, $max-width-container);
+
+      @include size_adaptive (--diameter, 510, 854, 1024, $max-width-container);
+
+      @media (min-width: $max-width-container) {
+         --diameter: 854px;
+         top: 50%;
+      }
+
+      &.circle-border {
+         z-index: -1;
+         border: 1px solid var(--color-white-05);
+
+         &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+         }
+
+         &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(var(--color-forest-wolf) 20%, transparent 70%);
+            width: 170%;
+            height: 170%;
+            border-radius: 50%;
+            opacity: 0.8;
+         }
+      }
+   }
+
+
+   .icon-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      transform: translate(-50%, -50%) rotate(calc(var(--angle) * -1deg)) translateX(calc(var(--diameter) / -2)) rotate(calc(var(--angle) * 1deg));
+
+      &.check-1 {
+         --size: 32px;
+         --angle: -25;
+         @include number_adaptive(--angle, -25, 18, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --angle: 18;
+         }
+      }
+
+      &.check-2 {
+         --size: 45px;
+         --angle: 50;
+         @include number_adaptive(--angle, 50, 36, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --angle: 36;
+         }
+      }
+
+      &.check-3 {
+         --size: 27px;
+         --angle: 90;
+         @include number_adaptive(--angle, 90, 54, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --angle: 54;
+         }
+      }
+
+      &.check-4 {
+         --size: 35px;
+         --angle: 215;
+         @include number_adaptive(--angle, 215, 180, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            --angle: 180;
+         }
+      }
+   }
+
+   &__buttons {
+      position: relative;
+
+      @media (min-width:1024px) {
+         order: 2;
+      }
+   }
+
+   &__buttons-body {
+      top: 0;
+      right: var(--padding-container);
+      display: flex;
+      justify-content: center;
+      transform: translateY(var(--offset));
+
+      @media (min-width:1024px) {
+         --offset: -175px;
+         justify-content: flex-end;
+         position: absolute;
+         order: 1;
+      }
+
+      @include size_adaptive (--offset, -175, 0, 1024, $max-width-container);
+
+      @media (min-width:$max-width-container) {
+         --offset: 0;
+      }
+   }
+
+   &__button {
+      padding-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      --size: 170px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      transition: background-color $tr-time;
+      @include size_adaptive (--size, 170, 237, 768, 1024);
+
+      @media (min-width:1024px) {
+         --size: 237px;
+      }
+
+      &:not(:first-child) {
+         margin-left: -20px;
+      }
+
+      &.bark {
+         z-index: 2;
+         background-color: var(--color-pale-sandy);
+      }
+
+      &.light {
+         z-index: 1;
+         backdrop-filter: blur(20px);
+         background-color: var(--color-forest-wolf-05);
+         border: 1px solid var(--color-white-05);
+      }
+
+      ._pc &:hover {
+         background-color: var(--color-black-dark);
+
+         .main-screen__button-text {
+            color: var(--color-white);
+         }
+      }
+   }
+
+   &__button-text {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: min-content;
+      max-width: 60%;
+      text-align: start;
+      color: var(--color-olive-brown);
+      font-weight: 500;
+      font-size: 16px;
+      transition: color $tr-time;
+
+      @media (min-width:1024px) {
+         font-size: 20px;
+         gap: 15px;
+      }
+
+      svg,
+      img {
+         width: 13px;
+
+         @media (min-width:1024px) {
+            width: 18px;
+         }
+      }
+   }
+
+   &__button-image {
+      position: relative;
+
+      svg,
+      img {
+         pointer-events: none;
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 85%;
+
+         @media (min-width:1024px) {
+            width: 100%;
+         }
+      }
+   }
+}

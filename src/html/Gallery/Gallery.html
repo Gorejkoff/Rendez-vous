@@ -1,0 +1,37 @@
+<section class="gallery">
+   <div class="gallery__container">
+      @@include('./Gallery-Header.html',{})
+      @@include('./Gallery-Grid.html',{})
+      <div class="gallery__block">
+         <div class="gallery__presentation">
+            <img class="gallery__presentation-image paralax" src="@img/png/sole-1.png" alt="стелька">
+            <img class="gallery__presentation-image" src="@img/png/sole-2.png" alt="подошва">
+            <div class="gallery__presentation-gradient"></div>
+            <div class="gallery__presentation-circle"></div>
+            <div class="icon-circle icon-circle-animate check-1">
+               <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 2.94444L5.6129 8L12 1" stroke="white" stroke-width="2.12903" />
+               </svg>
+               <div class="icon-circle-text text-left">благородный цвет</div>
+            </div>
+            <div class="icon-circle icon-circle-animate check-2">
+               <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 2.94444L5.6129 8L12 1" stroke="white" stroke-width="2.12903" />
+               </svg>
+               <div class="icon-circle-text text-left">уникальная технология</div>
+            </div>
+            <div class="icon-circle icon-circle-animate check-3">
+               <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 2.94444L5.6129 8L12 1" stroke="white" stroke-width="2.12903" />
+               </svg>
+               <div class="icon-circle-text">удобная стелька</div>
+            </div>
+         </div>
+         @@include('./Gallery-Video.html',{})
+      </div>
+      <img class="gallery__bubble-1" src="@img/png/bubble-1.png" alt="пузыри" aria-hidden="true">
+      <img class="gallery__bubble-2" src="@img/png/bubble-1.png" alt="пузыри" aria-hidden="true">
+      <img class="gallery__bubble-3" src="@img/png/bubble-1.png" alt="пузыри" aria-hidden="true">
+      <img class="gallery__bubble-4" src="@img/png/bubble-1.png" alt="пузыри" aria-hidden="true">
+   </div>
+</section>

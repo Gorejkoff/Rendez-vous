@@ -1,0 +1,203 @@
+@use'../assets/variablesSCSS.scss' as *;
+@use'../assets/mixin.scss' as *;
+
+.shops {
+   position: relative;
+   z-index: 1;
+   padding-bottom: 128px;
+
+   @media (min-width:1024px) {
+      padding-bottom: 96px;
+   }
+
+   &__container {}
+
+   &__title {
+      margin-bottom: 28px;
+      max-width: 280px;
+      font-weight: 500;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: var(--color-greenish-black);
+
+      @media (min-width:1024px) {
+         margin-bottom: 18px;
+         font-size: 40px;
+      }
+   }
+
+   &__swiper {
+      @media (min-width:1024px) {
+         margin-bottom: 60px;
+      }
+
+      .swiper-nav {
+         margin-top: 50px;
+         justify-content: flex-end;
+
+         @media (min-width:1024px) {
+            margin-top: 20px;
+         }
+      }
+
+      .swiper-pagination {
+         color: var(--color-white);
+      }
+
+      .swiper-button-arrow {
+         path {
+            fill: var(--color-white);
+         }
+      }
+   }
+
+   &__swiper-slide {
+      width: auto;
+   }
+
+   &__swiper-image {
+      &.mergin-top {
+
+         @include size_adaptive (margin-top, 96, 150, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            margin-top: 150px;
+         }
+      }
+
+      &.size-1 {
+         width: 150px;
+         @include size_adaptive (width, 150, 235, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            width: 235px;
+         }
+      }
+
+      &.size-2 {
+         width: 250px;
+         @include size_adaptive (width, 300, 479, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            width: 479px;
+         }
+      }
+
+      &.size-3 {
+         width: 180px;
+         @include size_adaptive (width, 236, 372, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            width: 372px;
+         }
+      }
+
+      &.size-4 {
+         width: 200px;
+         @include size_adaptive (width, 289, 455, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            width: 455px;
+         }
+      }
+
+      &.size-5 {
+         width: 200px;
+         @include size_adaptive (width, 174, 275, 1024, $max-width-container);
+
+         @media (min-width:$max-width-container) {
+            width: 275px;
+         }
+      }
+
+      img {
+         width: 100%;
+      }
+   }
+
+   &__footer {
+      padding-top: 40px;
+
+      @media (min-width:1024px) {
+         padding-top: 0;
+         margin-bottom: 66px;
+         max-width: 940px;
+      }
+
+      @media (min-width:$max-width-container) {
+         margin-bottom: 170px;
+      }
+   }
+
+   &__footer-text {
+      margin-bottom: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      @media (min-width:1024px) {
+         margin-bottom: 0;
+         font-size: 32px;
+         color: var(--color-white);
+
+         span {
+            color: inherit;
+         }
+      }
+
+      @media (min-width:$max-width-container) {
+         font-size: 40px;
+      }
+   }
+
+   &__footer-sale {
+      margin-bottom: 10px;
+      font-weight: 300;
+      font-size: 80px;
+      text-transform: uppercase;
+      color: var(--color-black);
+
+      @media (min-width:1024px) {
+         margin-bottom: 0;
+         font-size: 120px;
+         text-align: end;
+         color: var(--color-white);
+      }
+   }
+
+   &__delivery {
+      display: flex;
+      gap: 45px;
+
+      @media (min-width:1024px) {
+         justify-content: flex-end;
+         color: var(--color-white);
+      }
+
+      svg,
+      img {
+         display: none;
+         margin-top: 5px;
+
+         @media (min-width:1024px) {
+            display: inline-block;
+         }
+      }
+   }
+
+   &__delivery-text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 114%;
+
+      @media (min-width:1024px) {
+         max-width: 407px;
+         font-size: 22px;
+      }
+   }
+
+   .swiper-nav {
+      @media (max-width:1023.98px) {
+         justify-content: center;
+      }
+   }
+}

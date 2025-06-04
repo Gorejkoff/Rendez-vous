@@ -1,0 +1,109 @@
+@use '../assets/variablesSCSS.scss' as *;
+
+.questions {
+
+   &__container {}
+
+   &__body {
+      padding: 40px 20px;
+      background-color: var(--color-white);
+
+      @media (min-width:1024px) {
+         padding: 60px 40px 40px;
+      }
+
+      @media (min-width:$max-width-container) {
+         padding: 100px 100px 60px;
+
+      }
+   }
+
+   &__header {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      @media (min-width:1024px) {
+         margin-bottom: 50px;
+      }
+   }
+
+   &__title {
+      @media (min-width:1024px) {
+         flex: 0 1 573px;
+      }
+   }
+
+   &__info {
+      display: none;
+      flex: 0 0 145px;
+
+      @media (min-width:$max-width-container) {
+         display: block;
+      }
+   }
+
+   &__tab-body {
+      &:not(:last-child) {
+         border-bottom: 1px solid var(--color-light-grey);
+      }
+   }
+
+   &__tab-button {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      width: 100%;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 130%;
+      text-align: left;
+
+
+   }
+
+   &__tab-arrow {
+      display: none;
+      transition: transform $tr-time-l;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
+
+      .js-tabs-open & {
+         transform: rotate(-90deg);
+      }
+   }
+
+   &__tab-inner {
+      padding-bottom: 20px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+   }
+
+   &__logo-footer {
+      display: none;
+      margin-top: -20px;
+      width: 100%;
+
+      @media (min-width:$max-width-container) {
+         display: block;
+      }
+   }
+
+   &__logo-header {
+      display: none;
+      width: 80px;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
+
+      @media (min-width:$max-width-container) {
+         display: none;
+      }
+   }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{"title":"Rendez-vous"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/Main-Screen/Main-Screen.html',{})
+
+      <div class="main">
+
+         @@include('html/Line/Line.html',{})
+
+         @@include('html/Description-Material/Description-Material.html',{})
+
+         @@include('html/Health/Health.html',{})
+
+         @@include('html/Models/Models.html',{})
+
+         @@include('html/Baner/Baner.html',{})
+
+         <div class="group-block">
+            @@include('html/Gallery/Gallery.html',{})
+            <section class="delivery__body" data-da=".delivery,0,1024">
+               <div class="delivery__container">
+                  @@include('html/Delivery/Delivery-Header.html',{})
+                  @@include('html/Delivery/Delivery-Quantity.html',{})
+               </div>
+            </section>
+            @@include('html/Delivery/Delivery.html',{})
+            <div class="container">
+               <div data-da=".shops__footer-container,0,1024">
+                  <div class="shops__footer">
+                     <div class="shops__footer-text title-section">Каждому покупателю, который вступил в клуб Privilege, <span>предоставляются скидки на покупки</span>.</div>
+                     <div class="shops__footer-sale">до 20%</div>
+                  </div>
+                  <div class="shops__delivery">
+                     <svg width="230" height="8" viewBox="0 0 230 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M229.354 4.35357C229.549 4.15831 229.549 3.84173 229.354 3.64647L226.172 0.464486C225.976 0.269224 225.66 0.269224 225.464 0.464486C225.269 0.659748 225.269 0.97633 225.464 1.17159L228.293 4.00002L225.464 6.82845C225.269 7.02371 225.269 7.34029 225.464 7.53555C225.66 7.73082 225.976 7.73082 226.172 7.53555L229.354 4.35357ZM0 4L-4.37114e-08 4.5L229 4.50002L229 4.00002L229 3.50002L4.37114e-08 3.5L0 4Z" fill="white" />
+                     </svg>
+                     <p class="shops__delivery-text">
+                        Действует собственная доставка, поэтому обувь привозится прямо к вашей двери, в магазин или пункт выдачи.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         @@include('html/Info-Block/Info-Block.html',{})
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

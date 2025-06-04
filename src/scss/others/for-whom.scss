@@ -1,0 +1,130 @@
+@use '../assets/variablesSCSS.scss' as *;
+@use '../assets/mixin.scss' as *;
+
+.for-whom {
+   position: relative;
+   overflow: hidden;
+
+   &__container {}
+
+   &__body {
+      @media (min-width:1024px) {
+         display: flex;
+      }
+   }
+
+   &__content {
+      padding-top: 65px;
+      margin-bottom: 70px;
+
+      @media (min-width:1024px) {
+         flex: 0 0 50%;
+      }
+
+      @media (min-width:$max-width-container) {
+         padding-top: 135px;
+      }
+
+      .button-black {
+         margin: 38px auto 0;
+
+
+         @media (min-width:1024px) {
+            margin: -90px 50px 0 auto;
+         }
+      }
+   }
+
+   &__header {
+      margin-bottom: 30px;
+
+      @media (min-width:1024px) {
+         margin-bottom: 70px;
+      }
+   }
+
+   &__header-title {
+      margin-bottom: 15px;
+   }
+
+   &__header-text {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 156%;
+   }
+
+   &__reason {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      @media (min-width:1024px) {
+         grid-template-columns: 1fr 1fr;
+         column-gap: 20px;
+         row-gap: 70px;
+      }
+
+      @media (min-width:$max-width-container) {
+         column-gap: 40px;
+         row-gap: 100px;
+      }
+   }
+
+   &__reason-item {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 156%;
+
+      @media (min-width:$max-width-container) {
+         font-size: 20px;
+      }
+
+      &:nth-child(2) {
+         @media (min-width:1024px) {
+            margin-right: -25%;
+         }
+      }
+   }
+
+   &__image {
+      display: none;
+      flex: 1 1 auto;
+      // overflow: hidden;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
+
+      img {
+         margin-bottom: -20%;
+         width: 120%;
+      }
+   }
+
+   &__background-text {
+      display: none;
+      margin-left: calc(var(--padding-container) * -1);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      font-weight: 400;
+      font-size: 495px;
+      line-height: 86%;
+      text-transform: uppercase;
+      color: var(--color-white);
+      opacity: 0.6;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
+
+      @media (min-width:2000px) {
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+}

@@ -1,0 +1,55 @@
+@use '../assets/variablesSCSS.scss' as *;
+@use '../assets/mixin.scss' as *;
+
+.header {
+   position: relative;
+   z-index: 3;
+   margin-top: 30px;
+   margin-bottom: 35px;
+
+   @media (min-width:768) {
+      margin-top: 48px;
+      margin-bottom: 44px;
+   }
+
+
+   @include size_adaptive (margin-top, 48, 144, 1024, $max-width-container);
+   @include size_adaptive (margin-bottom, 44, 96, 1024, $max-width-container);
+
+   @media (min-width:$max-width-container) {
+      margin-top: 144px;
+      margin-bottom: 96px;
+   }
+
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      @media (min-width:1024px) {
+         align-items: flex-start;
+      }
+   }
+
+   &__text {
+      display: none;
+
+      @media (min-width:1024px) {
+         display: block;
+      }
+   }
+
+   &__logo {
+
+      img,
+      svg {
+         height: 35px;
+         width: auto;
+
+         @media (min-width:768px) {
+            height: 55px;
+         }
+      }
+   }
+}

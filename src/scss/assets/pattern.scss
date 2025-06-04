@@ -1,0 +1,357 @@
+@use 'variablesSCSS' as *;
+
+body {
+   font-family: var(--font-family);
+   font-weight: 400;
+   color: var(--color-black);
+   --padding-container: #{$padding-mobile};
+   --container-width: #{$width-content};
+   --max-width-container: #{$max-width-container};
+   scrollbar-gutter: stable;
+   background-color: var(--color-forest-wolf);
+   // @media (min-width:768px) {
+   //    --padding-container: #{$padding-tablet};
+   // }
+
+   // @media (min-width:1024px) {
+   //    --padding-container: #{$padding-desktop};
+   // }
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.main {
+   flex: 1 1 auto;
+}
+
+// .shadow {
+//    box-shadow: -3px 0 16px 0 rgba(51, 51, 51, 0.3);
+// }
+
+[class*="container"] {
+   padding-left: var(--padding-container);
+   padding-right: var(--padding-container);
+   margin: 0 auto;
+   width: 100%;
+   max-width: var(--max-width-container);
+}
+
+.group-block {
+   overflow: hidden;
+}
+
+.link-underline {
+   text-decoration: underline;
+   text-decoration-color: inherit;
+   transition: text-decoration-color $tr-time;
+
+   &:hover {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+   }
+}
+
+.title-section {
+   font-size: 24px;
+   text-transform: uppercase;
+
+   @media (min-width:1024px) {
+      font-size: 32px;
+   }
+
+   @media (min-width:$max-width-container) {
+      font-size: 40px;
+   }
+
+   p,
+   span {
+      color: var(--color-sepia-crayola);
+   }
+}
+
+.icon-circle {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 27px;
+   height: 27px;
+   border-radius: 50%;
+   background: var(--bg-icon);
+
+   &::before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      border: 1px solid var(--color-white);
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+   }
+
+   &.icon-circle-animate:hover::before {
+      animation: icon-circle .7s forwards;
+   }
+}
+
+.icon-circle-text {
+   position: absolute;
+   top: 0;
+   left: calc(100% + 13px);
+   width: 200px;
+   font-weight: 500;
+   font-size: 16px;
+
+   &.text-left {
+      left: auto;
+      right: calc(100% + 13px);
+   }
+
+   &.text-left-adaptive {
+      @media (max-width:1200px) {
+         left: auto;
+         right: calc(100% + 13px);
+      }
+   }
+}
+
+@keyframes icon-circle {
+   0% {
+      opacity: 0;
+   }
+
+   10% {
+      opacity: 1;
+      width: var(--size);
+      height: var(--size);
+   }
+
+   100% {
+      opacity: 1;
+      width: 51px;
+      height: 51px;
+   }
+}
+
+.button-black {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   font-size: 16px;
+   text-transform: uppercase;
+   color: var(--color-white);
+   background-color: var(--color-black-dark);
+   width: 192px;
+   height: 192px;
+   border-radius: 50%;
+}
+
+// .hidden-max1024 {
+//    @media (max-width:1023.98px) {
+//       display: none !important;
+//    }
+// }
+
+// .hidden-max768 {
+//    @media (max-width:767.98px) {
+//       display: none !important;
+//    }
+// }
+
+// .title-header {
+//    margin-bottom: 10px;
+//    font-weight: 700;
+//    font-size: 18px;
+//    line-height: 133%;
+//    text-transform: uppercase;
+//    color: var(--color-yellow-broom);
+
+//    @media (min-width:768px) {
+//       margin-bottom: 20px;
+//       font-size: 20px;
+//    }
+
+//    @media (min-width:1024px) {
+//       font-size: 24px;
+//    }
+// }
+
+// .title-section {
+//    font-weight: 700;
+//    font-size: 40px;
+
+//    @media (min-width:768px) {
+//       font-size: 50px;
+//    }
+
+//    @media (min-width:1024px) {
+//       font-size: 60px;
+//    }
+// }
+
+// .margin-section {
+//    margin-bottom: 40px;
+
+//    @media (min-width:768px) {
+//       margin-bottom: 70px;
+//    }
+
+//    @media (min-width:1024px) {
+//       margin-bottom: 100px;
+//    }
+// }
+
+// .scroll::-webkit-scrollbar {
+//    width: 11px;
+//    height: 11px;
+//    border-radius: 6px;
+// }
+
+// .scroll::-webkit-scrollbar-track {
+//    border-radius: 6px;
+//    background-color: var(--color-lightgrey, lightgrey);
+// }
+
+// .scroll::-webkit-scrollbar-thumb {
+//    background-color: var(--color-green, green);
+//    background-clip: content-box;
+//    border-radius: 6px;
+// }
+
+.swiper-wrapper {
+   position: relative;
+   z-index: 1;
+   display: flex;
+   transition-property: transform;
+}
+
+.swiper-slide {
+   flex-shrink: 0;
+   width: 100%;
+   position: relative;
+   transition-property: transform;
+   touch-action: pan-y;
+}
+
+.swiper-grid {
+   .swiper-wrapper {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-flow: column;
+      grid-auto-columns: min-content
+   }
+
+   .swiper-slide {
+      margin-bottom: 50px;
+      height: auto !important;
+
+      &:nth-child(4n+1),
+      &:nth-child(4n+2) {
+         width: 279px !important;
+      }
+
+      &:nth-child(4n+3),
+      &:nth-child(4n+4) {
+         width: 355px !important;
+      }
+   }
+}
+
+.swiper-button-circle {
+   width: 65px;
+   height: 65px;
+   border-radius: 50%;
+   background: var(--bg-icon);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   @media (min-width:1024px) {
+      width: 45px;
+      height: 45px;
+   }
+
+   svg {
+      width: 50%;
+   }
+
+   .button-hidden & {
+      display: none;
+   }
+}
+
+.swiper-nav {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.swiper-button-arrow {
+   padding-top: 5px;
+   padding-bottom: 5px;
+   display: flex;
+   align-items: center;
+}
+
+.swiper-pagination {
+   font-weight: 500;
+   font-size: 16px;
+   text-transform: uppercase;
+   color: var(--color-greenish-black);
+}
+
+.js-tabs-shell {
+   will-change: height;
+   transform: translateZ(0);
+   height: 0;
+   overflow: hidden;
+   transition: height $tr-time-l;
+}
+
+.js-tabs-toggle {
+   cursor: pointer;
+}
+
+// /* указатель количества, абсолютное позиционирование */
+// [data-icon-quantity] {
+//    position: relative;
+//    display: block;
+
+//    &::after {
+//       content: attr(data-icon-quantity);
+//       padding: 5px;
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       transform: translate(25%, -25%);
+
+//       min-width: 24px;
+//       height: 24px;
+
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+
+//       border-radius: 12px;
+//       font-size: 12px;
+//       color: var(--color-white, #ffffff);
+//       background-color: var(--color-black, #000000);
+//    }
+// }
+
+// /* указатель количества, в строку */
+// [data-string-quantity] {
+//    &::after {
+//       content: " (" attr(data-string-quantity) ")";
+//       color:var(--color-black, #000000);
+//    }
+// }
