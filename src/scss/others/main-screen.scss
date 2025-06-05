@@ -22,7 +22,6 @@
       object-fit: cover;
    }
 
-
    .title-section {
       padding-right: 10px;
 
@@ -57,7 +56,6 @@
          display: flex;
          justify-content: space-between;
       }
-
    }
 
    &__image {
@@ -65,7 +63,7 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      width: 100vw;
+      width: 100%;
    }
 
    &__image-body {
@@ -85,12 +83,12 @@
       width: 120vw;
 
       @media (min-width:1024px) {
-         width: 100vw;
+         width: 100%;
       }
    }
 
    &__image-shell {
-      flex: 0 0 100vw;
+      flex: 0 0 100%;
       display: flex;
       justify-content: center;
 
@@ -108,7 +106,6 @@
       margin-bottom: 48px;
       font-weight: 500;
       font-size: 16px;
-
       @include size_adaptive_flex (0, 0, 304, 394, 1024, $max-width-container);
 
       @media (min-width:1024px) {
@@ -156,7 +153,6 @@
       }
 
       @include number_adaptive(--top, 70, 50, 1024, $max-width-container);
-
       @include size_adaptive (--diameter, 510, 854, 1024, $max-width-container);
 
       @media (min-width: $max-width-container) {
@@ -192,7 +188,6 @@
          }
       }
    }
-
 
    .icon-circle {
       position: absolute;

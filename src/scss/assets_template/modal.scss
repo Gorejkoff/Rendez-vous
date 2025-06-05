@@ -1,11 +1,13 @@
+@use '../assets/variablesSCSS.scss' as *;
+
 .modal {
    --height-modal: 100vh;
    position: fixed;
-   top: var(--header-h);
+   top: 0;
    left: 0;
    z-index: 19;
    width: 100vw;
-   height: var(--height-modal);
+   height: 100%;
    background-color: var(--color-modal-bg);
    scrollbar-gutter: stable;
    overflow-y: auto;
@@ -15,37 +17,135 @@
       --height-modal: 100dvh;
    }
 
-   @media (min-width:768px) {
-      top: 0;
-      --height-modal: 100vh;
-
-      @supports(height: 100dvh) {
-         --height-modal: 100dvh
-      }
-   }
-
    &__container {
       padding-top: 20px;
       padding-bottom: 20px;
       min-height: var(--height-modal);
       display: flex;
       align-items: center;
+   }
 
-      @media (max-width:767.98px) {
-         padding: 0;
+   &__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 9px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 6px;
+      background-color: var(--color-black);
+      color: var(--color-white);
+   }
+
+   &__body {
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 818px;
+      min-height: 713px;
+      border-radius: 20px;
+
+      @media (min-width:1024px) {
+         padding: 50px;
       }
    }
 
-
-   &__body {
-      position: relative;
-      margin: 0 auto;
+   &__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
       width: 100%;
-      background-color: var(--color-white);
+      height: 100%;
+      object-fit: cover;
+   }
 
+   &__title {
+      margin-bottom: 20px;
+      font-weight: 400;
+      font-size: 32px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+   }
+
+   &__text {
+      margin-bottom: 40px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 125%;
+      text-align: center;
+      max-width: 390px;
+   }
+
+   &__form {
+      width: 100%;
+      max-width: 318px;
+   }
+
+   &__group-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+   }
+
+   &__button-response {
+      padding: 10px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--color-olive-brown);
+      border-radius: 50%;
+      border: 1px solid var(--color-pale-sandy);
+      transition: background-color $tr-time;
+
+      @media (min-width:768px) {
+         width: 140px;
+         height: 140px;
+         font-size: 14px;
+      }
+
+      svg {
+         width: 12px;
+         height: auto;
+
+         @media (min-width:768px) {
+            width: 18px;
+         }
+      }
+
+      .path {
+         transition: fill $tr-time;
+      }
+
+      &.fill {
+         background-color: var(--color-pale-sandy);
+      }
+
+      &:hover {
+         color: var(--color-white);
+         background-color: var(--color-black);
+
+         path {
+            fill: var(--color-white);
+         }
+      }
    }
 }
-
 
 .js-modal-hidden {
    display: none;

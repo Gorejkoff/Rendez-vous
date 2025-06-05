@@ -151,7 +151,33 @@ if (document.querySelector('.shops__swiper')) {
       pagination: {
          el: swiperItem.querySelector('.swiper-pagination'),
          type: 'fraction',
+      },
+   });
+}
 
+if (document.querySelector('.feedback__swiper')) {
+   const swiperItem = document.querySelector('.feedback__swiper');
+
+   const swiper = new Swiper(swiperItem.querySelector('.swiper'), {
+      spaceBetween: 46,
+      speed: 300,
+      slidesPerView: 1,
+      grabCursor: true,
+      initialSlide: 0,
+      centeredSlides: true,
+      breakpoints: {
+         1024: {
+            slidesPerView: 2,
+            initialSlide: 1,
+         },
+      },
+      navigation: {
+         nextEl: swiperItem.querySelector('.js-swiper-next'),
+         prevEl: swiperItem.querySelector('.js-swiper-prev'),
+      },
+      pagination: {
+         el: swiperItem.querySelector('.swiper-pagination'),
+         type: 'fraction',
       },
    });
 }

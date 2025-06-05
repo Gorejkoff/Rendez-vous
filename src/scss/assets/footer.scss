@@ -1,1 +1,29 @@
 @use '../assets/variablesSCSS.scss' as *;
+
+.footer {
+   position: relative;
+   height: 220px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   @media (min-width:1024px) {
+      height: 265px;
+   }
+
+   &__logo {
+      height: auto;
+      width: 240px;
+   }
+
+   &__background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+   }
+}

@@ -41,9 +41,7 @@ function throttle(callee, timeout) {
    }
 }
 
-const moveElementsTrottle = throttle(moveElements, 16)
-
-
+const moveElementsTrottle = throttle(moveElements, 16);
 addWidthViewport();
 updateVariables();
 // ** ======================= RESIZE ======================  ** //
@@ -52,9 +50,16 @@ window.addEventListener('resize', () => {
    updateVariables();
 })
 
-
+// https://www.rendez-vous.ru/
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
+   if (event.target.closest('.js-modal-follow')) {
+      event.preventDefault();
+      initOpenModal("modal-transition");
+   }
+   if (event.target.closest('.js-modal-callback')) {
+      initOpenModal("modal-callback");
+   }
    // if (event.target.closest('.js-switch-slide')) {
    //    switchMainSlide(event.target.closest('.js-switch-slide'));
    // } else {
@@ -74,7 +79,6 @@ if (isPC) {
    })
 }
 
-
 function addWidthViewport() {
    document.body.style.setProperty('--vw', window.innerWidth)
 }
@@ -90,11 +94,11 @@ function switchMainSlideStart() {
       MAIN_SCREEN_SLIDER.style.setProperty('--offset', 0);
    }
 }
+
 function updateVariables() {
    centerWidth = window.innerWidth / 2;
    centerHeight = window.innerHeight / 2;
 }
-
 
 function moveElements(event) {
    let mouseX = (event.clientX - centerWidth) / centerWidth;

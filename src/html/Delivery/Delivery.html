@@ -1,4 +1,7 @@
 <div class="delivery">
    @@include('../Shops/Shops.html',{})
-   <img class="delivery__background" src="@img/png/background-delivery.png" alt="вид на город из балкона" aria-hidden="true">
+   <picture>
+      <source srcset="@img/webp/background-delivery.webp" type="image/webp" media="(min-width: 1024px)">
+      <img class="delivery__background" src="@img/webp/background-delivery-min.webp" alt="вид на город из балкона" aria-hidden="true">
+   </picture>
 </div>
