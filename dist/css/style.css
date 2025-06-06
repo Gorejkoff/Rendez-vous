@@ -366,6 +366,11 @@ body {
   border-radius: 50%;
 }
 
+.fancybox__footer,
+.fancybox__carousel {
+  width: 100vw;
+}
+
 .swiper-wrapper {
   position: relative;
   z-index: 1;
@@ -1668,6 +1673,7 @@ blockquote::after {
 }
 
 .models__slide-image-shell {
+  display: block;
   position: relative;
   padding-bottom: 133%;
   overflow: hidden;
@@ -1826,6 +1832,7 @@ blockquote::after {
 }
 
 .gallery__image {
+  display: block;
   cursor: pointer;
   position: relative;
   padding-bottom: 133%;
@@ -1866,6 +1873,7 @@ blockquote::after {
 }
 
 .gallery__video-item {
+  display: block;
   cursor: pointer;
   position: relative;
   padding-bottom: 133%;

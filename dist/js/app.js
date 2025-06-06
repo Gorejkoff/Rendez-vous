@@ -107,9 +107,10 @@ function moveElements(event) {
    document.body.style.setProperty('--mouseY', mouseY.toFixed(3));
 }
 
-
-
-
+// Fancybox.bind('[data-fancybox]', {});
+Fancybox.bind("[data-fancybox]", {
+   hideScrollbar: false,
+});
 // перемещение блоков при адаптиве
 // data-da=".class,3,768" 
 // класс родителя куда перемещать

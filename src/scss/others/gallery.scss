@@ -109,6 +109,7 @@
    }
 
    &__image {
+      display: block;
       cursor: pointer;
       position: relative;
       padding-bottom: 133%;
@@ -156,6 +157,7 @@
    }
 
    &__video-item {
+      display: block;
       cursor: pointer;
       position: relative;
       padding-bottom: 133%;

@@ -150,6 +150,11 @@ body {
    border-radius: 50%;
 }
 
+.fancybox__footer,
+.fancybox__carousel {
+   width: 100vw;
+}
+
 // .scroll::-webkit-scrollbar {
 //    width: 11px;
 //    height: 11px;

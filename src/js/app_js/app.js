@@ -107,5 +107,7 @@ function moveElements(event) {
    document.body.style.setProperty('--mouseY', mouseY.toFixed(3));
 }
 
-
-
+// Fancybox.bind('[data-fancybox]', {});
+Fancybox.bind("[data-fancybox]", {
+   hideScrollbar: false,
+});
