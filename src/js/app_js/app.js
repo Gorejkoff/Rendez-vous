@@ -111,7 +111,34 @@ function moveElements(event) {
    document.body.style.setProperty('--mouseY', mouseY.toFixed(3));
 }
 
+const ICON_CIRCLE_ANIMATE = document.querySelectorAll('.icon-circle-animate');
+if (ICON_CIRCLE_ANIMATE.length > 0) {
+   ICON_CIRCLE_ANIMATE.forEach((el) => {
+      let stop = false;
+      el.addEventListener('animationend', (event) => {
+         el.classList.remove('icon-circle-animate');
+         if (!stop) {
+            setTimeout(() => {
+               el.classList.add('icon-circle-animate');
+            }, 100)
+         }
+      })
+      el.addEventListener('mouseenter', () => {
+         stop = true;
+      })
+      el.addEventListener('mouseleave', () => {
+         stop = false;
+         el.classList.add('icon-circle-animate');
+      })
+   })
+}
+
+
+
 // Fancybox.bind('[data-fancybox]', {});
 Fancybox.bind("[data-fancybox]", {
    hideScrollbar: false,
 });
+
+
+

@@ -291,15 +291,10 @@ body {
   border-radius: 50%;
 }
 
-.icon-circle.icon-circle-animate:hover::before {
-  -webkit-animation: icon-circle 0.7s forwards;
-          animation: icon-circle 0.7s forwards;
-}
-
 .icon-circle-text {
   position: absolute;
   top: 0;
-  left: calc(100% + 13px);
+  left: calc(100% + 30px);
   width: 200px;
   font-weight: 500;
   font-size: 16px;
@@ -307,10 +302,10 @@ body {
 
 .icon-circle-text.text-left {
   left: auto;
-  right: calc(100% + 13px);
+  right: calc(100% + 30px);
 }
 
-@-webkit-keyframes icon-circle {
+@-webkit-keyframes icon_circle {
   0% {
     opacity: 0;
   }
@@ -328,7 +323,7 @@ body {
   }
 }
 
-@keyframes icon-circle {
+@keyframes icon_circle {
   0% {
     opacity: 0;
   }
@@ -956,6 +951,11 @@ blockquote::after {
   border-radius: 50%;
 }
 
+.main-screen__circle .icon-circle-animate::before {
+  -webkit-animation: icon_circle var(--duration);
+          animation: icon_circle var(--duration);
+}
+
 .main-screen__circle.circle-border {
   z-index: -1;
   border: 1px solid var(--color-white-05);
@@ -999,21 +999,25 @@ blockquote::after {
 }
 
 .main-screen .icon-circle.check-1 {
+  --duration: 2s;
   --size: 32px;
   --angle: -25;
 }
 
 .main-screen .icon-circle.check-2 {
-  --size: 45px;
+  --duration: 1.5s;
+  --size: 40px;
   --angle: 50;
 }
 
 .main-screen .icon-circle.check-3 {
+  --duration: 1s;
   --size: 27px;
   --angle: 90;
 }
 
 .main-screen .icon-circle.check-4 {
+  --duration: 1.2s;
   --size: 35px;
   --angle: 215;
 }
@@ -1394,16 +1398,19 @@ blockquote::after {
 .health__marker.marker-1 {
   position: absolute;
   --size: 85px;
+  --duration: 2s;
 }
 
 .health__marker.marker-2 {
   position: absolute;
   --size: 120px;
+  --duration: 1.5s;
 }
 
 .health__marker.marker-3 {
   position: absolute;
   --size: 100px;
+  --duration: 1.7s;
 }
 
 .health__marker::after {
@@ -1420,9 +1427,9 @@ blockquote::after {
   border-radius: 50%;
 }
 
-.health__marker:hover::after {
-  -webkit-animation: big-circle 1s;
-          animation: big-circle 1s;
+.health__marker.icon-circle-animate::after {
+  -webkit-animation: big-circle var(--duration);
+          animation: big-circle var(--duration);
 }
 
 .health__marker-text {

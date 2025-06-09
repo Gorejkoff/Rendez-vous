@@ -91,23 +91,19 @@ body {
       height: 51px;
       border-radius: 50%;
    }
-
-   &.icon-circle-animate:hover::before {
-      animation: icon-circle .7s forwards;
-   }
 }
 
 .icon-circle-text {
    position: absolute;
    top: 0;
-   left: calc(100% + 13px);
+   left: calc(100% + 30px);
    width: 200px;
    font-weight: 500;
    font-size: 16px;
 
    &.text-left {
       left: auto;
-      right: calc(100% + 13px);
+      right: calc(100% + 30px);
    }
 
    &.text-left-adaptive {
@@ -118,7 +114,7 @@ body {
    }
 }
 
-@keyframes icon-circle {
+@keyframes icon_circle {
    0% {
       opacity: 0;
    }

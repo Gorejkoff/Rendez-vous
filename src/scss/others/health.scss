@@ -52,6 +52,7 @@
       &.marker-1 {
          position: absolute;
          --size: 85px;
+         --duration: 2s;
 
          @media (min-width:1024px) {
             top: 3%;
@@ -74,6 +75,7 @@
       &.marker-2 {
          position: absolute;
          --size: 120px;
+         --duration: 1.5s;
 
          @media (min-width:1024px) {
             top: 48%;
@@ -96,6 +98,7 @@
       &.marker-3 {
          position: absolute;
          --size: 100px;
+         --duration: 1.7s;
 
          @media (min-width:1024px) {
             top: 80%;
@@ -128,8 +131,8 @@
 
       }
 
-      &:hover::after {
-         animation: big-circle 1s;
+      &.icon-circle-animate::after {
+         animation: big-circle var(--duration);
       }
    }
 

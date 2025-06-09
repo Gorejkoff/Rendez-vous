@@ -173,6 +173,10 @@
          top: 50%;
       }
 
+      & .icon-circle-animate::before {
+         animation: icon_circle var(--duration);
+      }
+
       &.circle-border {
          z-index: -1;
          border: 1px solid var(--color-white-05);
@@ -210,6 +214,7 @@
       transform: translate(-50%, -50%) rotate(calc(var(--angle) * -1deg)) translateX(calc(var(--diameter) / -2)) rotate(calc(var(--angle) * 1deg));
 
       &.check-1 {
+         --duration: 2s;
          --size: 32px;
          --angle: -25;
          @include number_adaptive(--angle, -25, 18, 1024, $max-width-container);
@@ -220,7 +225,8 @@
       }
 
       &.check-2 {
-         --size: 45px;
+         --duration: 1.5s;
+         --size: 40px;
          --angle: 50;
          @include number_adaptive(--angle, 50, 36, 1024, $max-width-container);
 
@@ -230,6 +236,7 @@
       }
 
       &.check-3 {
+         --duration: 1s;
          --size: 27px;
          --angle: 90;
          @include number_adaptive(--angle, 90, 54, 1024, $max-width-container);
@@ -240,6 +247,7 @@
       }
 
       &.check-4 {
+         --duration: 1.2s;
          --size: 35px;
          --angle: 215;
          @include number_adaptive(--angle, 215, 180, 1024, $max-width-container);
