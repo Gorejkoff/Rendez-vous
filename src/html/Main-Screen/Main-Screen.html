@@ -1,8 +1,8 @@
 <div class="main-screen">
    @@include('../2_header.html',{})
    <picture>
-      <source srcset="@img/jpg/background-1.jpg" type="image/jpeg" media="(min-width: 1024px)">
-      <img class="main-screen__background" src="@img/jpg/background-2.jpg" alt="фон" aria-hidden="true">
+      <source srcset="@img/webp/background-1.webp" type="image/webp" media="(min-width: 1024px)">
+      <img class="main-screen__background" src="@img/webp/background-2-2.webp" alt="фон">
    </picture>
    <div class="container">
       <div class="main-screen__body">
@@ -55,16 +55,34 @@
             </a>
          </div>
       </div>
-      <div class="main-screen__image-body">
+      <div class="main-screen__image-block">
          <div id="main-screen-slider" class="main-screen__image-wrapper">
             <div class="main-screen__image-shell">
-               <img src="@img/webp/shoes-1.webp" alt="ботинок">
+               <div>
+                  <div class="main-screen__image-body">
+                     <img src="@img/webp/shoes-1.webp" alt="ботинок">
+                  </div>
+               </div>
             </div>
             <div class="main-screen__image-shell">
-               <img src="@img/webp/shoes-2.webp" alt="ботинок">
+               <div>
+                  <div class="main-screen__image-body">
+                     <picture>
+                        <source srcset="@img/webp/shoes-2.webp" type="image/webp" media="(min-width:1024px)">
+                        <img src="" alt="ботинок">
+                     </picture>
+                  </div>
+               </div>
             </div>
             <div class="main-screen__image-shell">
-               <img src="@img/webp/shoes-3.webp" alt="ботинок">
+               <div>
+                  <div class="main-screen__image-body">
+                     <picture>
+                        <source srcset="@img/webp/shoes-3.webp" type="image/webp" media="(min-width:1024px)">
+                        <img src="" alt="ботинок">
+                     </picture>
+                  </div>
+               </div>
             </div>
          </div>
       </div>

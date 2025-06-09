@@ -872,7 +872,7 @@ blockquote::after {
   width: 100%;
 }
 
-.main-screen__image-body {
+.main-screen__image-block {
   margin-top: -110px;
   overflow: hidden;
   pointer-events: none;
@@ -904,8 +904,24 @@ blockquote::after {
           justify-content: center;
 }
 
-.main-screen__image-shell img {
+.main-screen__image-body {
+  position: relative;
   width: 120vw;
+  padding-bottom: 88.5416%;
+  overflow: hidden;
+}
+
+.main-screen__image-body img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .main-screen__text {
@@ -2574,7 +2590,7 @@ blockquote::after {
             justify-content: space-between;
   }
 
-  .main-screen__image-body {
+  .main-screen__image-block {
     margin-top: 0;
   }
 
@@ -2582,7 +2598,7 @@ blockquote::after {
     width: 100%;
   }
 
-  .main-screen__image-shell img {
+  .main-screen__image-body {
     width: 480px;
   }
 

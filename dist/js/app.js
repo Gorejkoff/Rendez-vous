@@ -1,6 +1,10 @@
 "use strict"
-
-// window.addEventListener('load', (event) => {});
+window.addEventListener('load', function () {
+   var link = document.createElement('link');
+   link.rel = 'stylesheet';
+   link.href = 'css/fancybox.css';
+   document.head.appendChild(link);
+});
 
 // desktop or mobile (mouse or touchscreen)
 const isMobile = {
@@ -223,8 +227,6 @@ function activeScrollCloseModal() {
    }
 }
 
-
-
 if (document.querySelector('.description-material__swiper')) {
    const SWIPER_BODY = document.querySelector('.description-material__body');
    const SWIPER_SLIDES = document.querySelectorAll('.swiper-slide');
@@ -234,7 +236,6 @@ if (document.querySelector('.description-material__swiper')) {
          enabled: true,
          onlyInViewport: true,
       },
-      // allowTouchMove: true,
       loop: true,
       spaceBetween: 10,
       speed: 300,
@@ -406,90 +407,6 @@ if (document.querySelector('.feedback__swiper')) {
       },
    });
 }
-
-
-
-
-
-
-/* пример инициализации слайдера */
-// if (document.querySelector('.swiper')) {
-//    const swiper = new Swiper('.swiper', {
-//       keyboard: {
-//          enabled: true,
-//          onlyInViewport: true,
-//       },
-//       allowTouchMove: false,
-//       loop: true,
-//       spaceBetween: 10,
-//       speed: 300,
-//       slidesPerView: 2.5,
-//       grabCursor: true,
-//       initialSlide: 2,
-//       centeredSlides: true,
-//       breakpoints: {
-//          1024: {
-//             spaceBetween: 20,
-//             slidesPerView: 3
-//          },
-//          768: {
-//             slidesPerView: 2
-//          }
-//       },
-//       navigation: {
-//          nextEl: ".next",
-//          prevEl: ".prev",
-//       },
-//       pagination: {
-//          el: '.pagination__body',
-//          type: 'bullets',
-//          type: 'fraction',
-//          clickable: true,
-//       },
-//       autoplay: {
-//          delay: 2000,
-//       },
-//       virtual: {
-//          enabled: true,
-//       },
-//    });
-// }
-
-/* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */
-// if (document.querySelector('.swiper')) {
-//    let swiperState;
-//    let swiper;
-//    changeStateSlider();
-//    window.addEventListener('resize', () => {
-//       changeStateSlider();
-//    })
-//    function initswiper() {
-//       swiper = new Swiper('.swiper', {
-//          keyboard: {
-//             enabled: true,
-//             onlyInViewport: true,
-//          },
-//          allowTouchMove: true,
-//          loop: false,
-//          speed: 300,
-//          slidesPerView: 1.3,
-//          spaceBetween: 24,
-//       });
-//    }
-//    function changeStateSlider() {
-//       if (!MIN768.matches) {
-//          if (!swiperState) {
-//             swiperState = true;
-//             initswiper();
-//          }
-//       } else {
-//          if (swiperState) {
-//             swiperState = false;
-//             swiper.destroy(true, true);
-//          }
-//       }
-//    }
-// }
 
 // js-tabs-body - тело вкладки, в открытом состоянии добавляется класс js-tabs-open.
 // js-tabs-hover - работает hover на ПК, отключает клик на ПК, для touchscreen надо раставить js-tabs-click или js-tabs-toggle

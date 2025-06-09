@@ -1,6 +1,10 @@
 "use strict"
-
-// window.addEventListener('load', (event) => {});
+window.addEventListener('load', function () {
+   var link = document.createElement('link');
+   link.rel = 'stylesheet';
+   link.href = 'css/fancybox.css';
+   document.head.appendChild(link);
+});
 
 // desktop or mobile (mouse or touchscreen)
 const isMobile = {
