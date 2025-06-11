@@ -1665,10 +1665,10 @@ blockquote::after {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
 }
 
 .models__tab-item:not(:first-child) {
@@ -1681,6 +1681,12 @@ blockquote::after {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
+}
+
+.models__tab-item.active .swiper-nav {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.7s;
+  transition: opacity 0.3s 0.7s;
 }
 
 .models__slide:nth-child(odd) {
@@ -1749,6 +1755,7 @@ blockquote::after {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  opacity: 0;
 }
 
 .baner {
